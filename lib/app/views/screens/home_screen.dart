@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:radio/app/controllers/radio_controller.dart';
 import 'package:radio/app/utils/color_select.dart';
+import 'package:radio/app/views/widgets/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   final RadioController controller = Get.find();
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: const RadioDrawer(),
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -82,7 +83,9 @@ class HomeScreen extends StatelessWidget {
 
   Widget _soundWaves(BuildContext context) {
     return (
-      Container()
+      Container(
+
+      )
     );
   }
 }
