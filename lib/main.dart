@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:radio/app/utils/theme.dart';
-import 'package:radio/app/views/screens/home_screen.dart';
 import 'app/controllers/radio_controller.dart';
+import 'package:radio/app/controllers/theme_controller.dart';
+import 'package:radio/routes.dart';
 
 void main() {
   Get.put(RadioController());
-  runApp(const MyApp());
+  Get.put(ThemeController());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final ThemeController themeController = Get.find<ThemeController>();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Radio',
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        themeMode: ThemeMode.system,
-        home: HomeScreen());
+    return Obx(() {
+      return GetMaterialApp(
+        title: 'Radio For You',
+        theme: themeController.currentLightTheme,
+        darkTheme: themeController.currentDarkTheme,
+        themeMode: themeController.themeMode.value,
+        initialRoute: AppRoutes.HOME,
+        getPages: AppRoutes.routes,
+      );
+    });
   }
 }
