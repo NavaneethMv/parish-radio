@@ -5,11 +5,13 @@ class RadioController extends GetxController {
   var radioFreq = '89.6'.obs;
   var radioName = 'Radio For You'.obs;
   RxInt selectedIndex = 0.obs;
-  final String stationURL = "https://mediaserv33.live-streams.nl:8034/live";
+  final String stationURL = "https://a5.asurahosting.com/public/radio4u";
   final AudioPlayer _audioPlayer = AudioPlayer();
   var isPlaying = false.obs;
   var isBuffering = false.obs;
-
+// home page
+// notification
+// not workingg
   @override
   void onInit() {
     super.onInit();
