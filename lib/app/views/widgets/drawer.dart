@@ -26,7 +26,7 @@ class RadioDrawer extends StatelessWidget {
             ),
           ),
           Obx(() => ListTile(
-                leading: const Icon(Ionicons.planet_outline),
+                leading: const Icon(Ionicons.home_outline),
                 title: Text(
                   "HomePage",
                   style: Theme.of(context).textTheme.labelSmall,
